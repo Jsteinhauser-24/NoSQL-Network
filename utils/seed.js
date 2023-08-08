@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const data = require('../config/connection');
+const datas = require('../config/connection');
 const { User, Thought } = require('../models');
 const { getRandomUsers, getRandomThoughts } = require('./data');
 
-data.once('open', async () => {
+datas.once('open', async () => {
   try {
     await User.deleteMany({});
     await Thought.deleteMany({});
